@@ -9,7 +9,7 @@ I want to print a list of links
 
 As a user
 So I can store new links
-I want to add new links to the database
+I want to add new links to the database in descending chronological order
 
 As a user
 So I can organise the links in the database

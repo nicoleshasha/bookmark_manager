@@ -1,0 +1,35 @@
+LOG:  database system was shut down at 2016-10-17 14:29:20 BST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "manuela.sabatino" does not exist
+FATAL:  database "<manuela.sabatino>" does not exist
+ERROR:  syntax error at or near "DELETE" at character 20
+STATEMENT:  DROP TABLE student
+	DELETE TABLE student
+	TRUNCATE TABLE student
+	DROP DATABASE "manuela.sabatino";
+ERROR:  cannot drop the currently open database
+STATEMENT:  DROP DATABASE "manuela.sabatino";
+ERROR:  syntax error at or near "(" at character 14
+STATEMENT:  CREATE TABLE (id serial PRIMARY KEY, name VARCHAR(50));
+ERROR:  syntax error at or near "DROP" at character 24
+STATEMENT:  TRUNCATE TABLE student
+	DROP TABLE student
+	DROP TABLE student;
+ERROR:  syntax error at or near "SELECT" at character 50
+STATEMENT:  INSERT INTO students VALUES('Nicole', 'Manuela')
+	SELECT name
+	SELECT * FROM students
+	SELECT * FROM students
+	INSERT INTO students VALUES('Nicole')
+	SELECT name
+	SELECT * FROM students
+	SELECT * FROM students
+	SELECT * from students
+	INSERT INTO students (id, name) VALUES(1, 'Manuela')
+	SELECT * from strudents
+	INSERT INTO students VALUES(2, 'Manuela')
+	INSERT INTO students VALUES(2, 'Manuela');
+ERROR:  invalid input syntax for integer: "Manuela" at character 29
+STATEMENT:  INSERT INTO students VALUES('Manuela');
