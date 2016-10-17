@@ -1,5 +1,3 @@
-
-
 feature 'prints links' do
   scenario 'prints list of links on homepage' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
