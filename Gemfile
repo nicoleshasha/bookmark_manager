@@ -8,6 +8,7 @@ gem "data_mapper"
 gem "dm-postgres-adapter"
 gem "dm-migrations"
 gem "dm-transactions"
+gem "pg"
 
 group :test do
   gem 'database_cleaner'
