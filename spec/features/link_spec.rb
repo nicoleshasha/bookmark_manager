@@ -6,17 +6,19 @@ feature 'prints links' do
     visit '/links'
     expect(page.status_code).to eq 200
     #within 'ul#links' do
-      expect(page).to have_content('Makers Academy')
+    expect(page).to have_content('Makers Academy')
     #end
   end
 end
 
-feature 'multiple tags on links' do
-  scenario 'allows multiple tags for the same link' do
-    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: 'education', tags: 'coding')
-    visit '/tags/education'
-    expect(page).to have_content('Makers Academy')
-    visit 'tags/coding'
-    expect(page).to have_content('Makers Academy')
+feature 'add multiple tags' do
+  scenario 'create link with multiple tags' do
+    visit '/links/new'
+    fill_in 'url', with: 'http://www.makersacademy.com'
+    fill_in 'title', with: 'Makers Academy'
+    fill_in 'tags', with: 'education ruby'
+    click_button 'Submit'
+    link=Link.first
+    expect(link.tags.map(&:name)).to include("education", "ruby")
   end
 end
