@@ -21,5 +21,10 @@ post '/links' do
   redirect '/links'
   end
 
+get '/tags/bubbles' do
+  @list = Tag.all
+  erb(:bubbles)
+end
+
     run! if app_file == $0
 end
