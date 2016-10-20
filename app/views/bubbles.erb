@@ -1,8 +1,9 @@
 <h1>Links</h1>
 <ul id='links'>
-  <% @list.each do |list| %>
+  <% @links.each do |link| %>
     <li>
-      Name: <%= list.name %>
+      <!-- Name: <%= link.name if link.tags.name == 'bubbles' %> -->
+      Name: <%=  link.tags.name %>
     </li>
     <% end %>
 </ul>
