@@ -3,13 +3,12 @@ require 'dm-postgres-adapter'
 require 'dm-migrations'
 
 
-class Link
+class User
 
   include DataMapper::Resource
 
   property :id,       Serial
-  property :title,    String
-  property :url,      String
+  property :email,    String
+  property :password, String
 
-  has n, :tags, :through => Resource
 end

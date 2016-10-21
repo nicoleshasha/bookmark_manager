@@ -8,8 +8,18 @@ get '/' do
   "Hello world!"
 end
 
+get '/sign_up' do
+  erb :sign_up
+end
+
+post '/user' do
+  $user = User.create(email: params[:email], password: params[:password])
+  redirect '/links'
+end
+
 get '/links' do
   @links = Link.all
+  @user = $user
   erb :links
   end
 

@@ -9,6 +9,10 @@ feature 'signs up a new user account' do
     expect(page).to have_content("Welcome bookmarks4life@hotmail.co.uk")
   end
   scenario 'user count increases by 1' do
+    visit '/sign_up'
+    fill_in('email', :with => "bookmarks4life@hotmail.co.uk")
+    fill_in('password', :with => "ilovebookmarks")
+    click_button('Submit')
     expect(User.count).to eq 1
   end
 end
