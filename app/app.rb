@@ -1,5 +1,6 @@
 ENV["RACK_ENV"] ||=  "development"
 require 'sinatra/base'
+require 'dm-postgres-adapter'
 require_relative 'data_mapper_setup'
 
 class Bookmark < Sinatra::Base
