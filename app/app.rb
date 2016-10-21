@@ -16,7 +16,6 @@ end
 post '/links' do
   link = Link.create(url: params[:url], title: params[:title])
   params[:tags].split.each do |tag|
-
     link.tags << Tag.create(name: tag)
   end
   link.save
