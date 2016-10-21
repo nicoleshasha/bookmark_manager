@@ -1,6 +1,7 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require 'dm-migrations'
+require_relative 'data_mapper_setup'
 
 class Link
 
@@ -13,7 +14,7 @@ class Link
   has n, :tags, :through => Resource
 end
 
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
-DataMapper.finalize
-DataMapper.auto_upgrade!
+#
+# DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
+ DataMapper.finalize
+ DataMapper.auto_upgrade!
